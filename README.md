@@ -41,7 +41,7 @@ GET  | `localhost:8080/emprestimos/modelo`   | Retorna o modelo de cliente para 
 }
 ```
 
-![Postman Example](images/Captura%20de%20tela%20de%202022-07-19%2014-41-00.png)
+![Postman Example](src/images/Captura de tela de 2022-07-19 14-41-00.png)
 
 ## Port
 
