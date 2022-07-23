@@ -34,14 +34,14 @@ GET  | `localhost:8080/emprestimos/modelo`   | Retorna o modelo de cliente para 
 ``` json
 {
     "name": "João",
-    "cpf": "SP",
+    "cpf": "104.445.866-65",
     "age": 20,
     "uf": "SP",
     "rendaMensal": 6000
 }
 ```
 
-![Postman Example](https://github.com/misael-mateus/api-sistema_de_emprestimo-devsfree/blob/master/src/images/Captura%20de%20tela%20de%202022-07-19%2014-41-00.png?raw=true)
+![Postman Example](https://github.com/misael-mateus/api-sistema_de_emprestimo-devsfree/blob/master/src/images/Captura%20de%20tela%20de%202022-07-23%2005-54-00.png?raw=true)
 
 ## Port
 
