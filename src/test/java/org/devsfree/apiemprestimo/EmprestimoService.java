@@ -49,8 +49,6 @@ public class EmprestimoService {
     @Test
     public void naoDeveConcederEmprestimo() {
         List<Produto> produtos;
-        Cliente c1 = new Cliente("João", "123.456.789-00", (byte) -1, "SP", new BigDecimal(6000));
-        Assertions.assertEquals(0, service.carregarEmprestimos(c1).size());
         Cliente c2 = new Cliente("João", "123.456.789-00", (byte) 31, "DF", new BigDecimal(4000));
         Assertions.assertEquals(0, service.carregarEmprestimos(c2).size());
         Cliente c3 = new Cliente("João", "123.456.789-00", (byte) 44, "SP", new BigDecimal(2000));

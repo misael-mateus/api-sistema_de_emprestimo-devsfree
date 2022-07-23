@@ -20,23 +20,19 @@ public class EmprestimoService {
         Produto pessoal = new Produto(Emprestimo.EMPRESTIMO_PESSOAL, new BigDecimal("0.04"));
         Produto consignado = new Produto(Emprestimo.EMPRESTIMO_CONSIGNADO, new BigDecimal("0.02"));
 
-        if (verificaSalarioAcimaDeCincoMil(cliente.rendaMensal()) &&
-                verificarSeClienteTemMenosDeTrintaAnos(cliente.age())) {
+        if (verificarSeClienteTemMenosDeTrintaAnos(cliente.age()) && verificaSalarioAcimaDeCincoMil(cliente.rendaMensal())) {
             produtos.add(consignado);
             produtos.add(garantia);
-            produtos.add(consignado);
+            produtos.add(pessoal);
             return produtos;
         }
-        if (verificaSalarioAbaixoDeTresMil(cliente.rendaMensal()) &&
-                verificarRegrasParaRendaAbaixoDeTresMil(cliente.age(), cliente.uf())) {
+        if ((verificaSalarioAbaixoDeTresMil(cliente.rendaMensal()) &&
+                verificarRegrasParaRendaAbaixoDeTresMil(cliente.age(), cliente.uf()))
+                ||
+                (verificaSalarioMaiorQueTresMil(cliente.rendaMensal()) &&
+                        verificarSeMoraEmSp(cliente.uf()))) {
             produtos.add(pessoal);
             produtos.add(garantia);
-            return produtos;
-        }
-        if (verificaSalarioMaiorQueTresMil(cliente.rendaMensal()) &&
-                verificarSeMoraEmSp(cliente.uf()) && verificarMaiorIdade(cliente.age())) {
-            produtos.add(consignado);
-            produtos.add(pessoal);
             return produtos;
         }
         return produtos;
