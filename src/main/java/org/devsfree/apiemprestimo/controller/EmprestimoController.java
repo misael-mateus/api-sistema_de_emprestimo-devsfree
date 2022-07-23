@@ -24,6 +24,6 @@ public class EmprestimoController {
 
     @GetMapping("/modelo")
     public Cliente cliente() {
-        return new Cliente("João", "SP", (byte) 18, "SP",new BigDecimal("3000") );
+        return new Cliente("João", "104.445.866-65", (byte) 18, "SP",new BigDecimal("3000") );
     }
 }
